@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+<main>
+    <article>
+        <h1>{{ .Title }}</h1>
+        {{ .Date.Format "Monday, January 2, 2006" }}
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+        {{ .Content }}
+        <div>
+            {{ template "_internal/disqus.html" . }}
+        </div>
+    </article>
+</main>
+{{ partial "footer.html" . }}

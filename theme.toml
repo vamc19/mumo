@@ -1,0 +1,12 @@
+name = "Mumo"
+license = "MIT"
+licenselink = "https://github.com/unmole/mumo/blob/master/LICENSE.md"
+description = "NIH minimalist blog theme for hugo"
+homepage = "https://github.com/unmole/mumo/"
+tags = ["minimalist", "clean"]
+features = ["", ""]
+min_version = 0.18
+
+[author]
+  name = "Anmol Sarma"
+  homepage = "https://www.anmolsarma.in/"
