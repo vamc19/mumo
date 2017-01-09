@@ -22,8 +22,10 @@
     <b>
         <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     </b>
+<nav>
     {{ range .Site.Menus.main }}
     <a href="{{ .URL | relURL }}">{{ .Name }}</a> |
     {{ end }}
+    </nav>
     <hr/>
 </header>
