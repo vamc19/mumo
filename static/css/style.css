@@ -1,11 +1,12 @@
-body                { margin: 1em auto; max-width: 40em; padding:0 .62em; font:1.2em/1.62em sans-serif; }
+body                {margin: 1em auto; max-width: 40em; padding:0 .62em; font:1.2em/1.62em sans-serif;}
 a                   {color:#1360a7;}
 a:hover             {color:#398ad5;}
-tr:nth-child(odd)	{ background-color:#eee; }
-tr:nth-child(even)  { background-color:#fff; }
-pre                 { font-family:monospace; white-space:pre; overflow:auto; padding:1em; }
-img                 { width: 100%; height: auto;}
-header b a         { font-size: 2em; color: black; font-weight: lighter; text-decoration: none; display: inline-block;}
+tr:nth-child(odd)   {background-color:#eee;}
+tr:nth-child(even)  {background-color:#fff;}
+pre                 {font-family:monospace; white-space:pre; overflow:auto; padding:1em;}
+img                 {width: 100%; height: auto;}
+h2                  {font-size: 125%;}
+header b a          {font-size: 2em; color: black; font-weight: lighter; text-decoration: none; display: inline-block;}
 footer              {font-size: 0.6em; line-height: 1.4em;}
-post a              { font-size: larger; margin-bottom: -1em; text-decoration: none;}
+post a              {font-size: larger; margin-bottom: -1em; text-decoration: none;}
 post:hover          {text-decoration: underline;}
