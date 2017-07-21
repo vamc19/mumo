@@ -6,7 +6,6 @@ tr:nth-child(even)  { background-color:#fff; }
 pre                 { font-family:monospace; white-space:pre; overflow:auto; padding:1em; }
 img                 { width: 100%; height: auto;}
 header b a         { font-size: 2em; color: black; font-weight: lighter; text-decoration: none; display: inline-block;}
-header nav {align: right; display: inline-block; float: right;}
 footer              {font-size: 0.6em; line-height: 1.4em;}
 post a              { font-size: larger; margin-bottom: -1em; text-decoration: none;}
 post:hover          {text-decoration: underline;}
