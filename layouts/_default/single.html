@@ -2,14 +2,18 @@
 <main>
     <article>
         <h1>{{ .Title }}</h1>
+	{{ if ( ne true .Params.staticpage ) }}
         {{ .Date.Format "Monday, January 2, 2006" }}
         {{ range .Params.tags }}
         <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
         {{ end }}
+	{{ end }}
         {{ .Content }}
+	{{ if ( ne true .Params.staticpage ) }}
         <div>
              {{ partial "disqus.html" . }}
         </div>
+	{{ end }}
     </article>
 </main>
 {{ partial "footer.html" . }}
