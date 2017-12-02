@@ -1,14 +1,14 @@
 {{ partial "header.html" . }}
 {{ if not .IsHome }}
-<h3>Posts tagged "{{lower .Title }}"</h3>
+	<h3>Posts tagged "{{lower .Title }}"</h3>
 {{ end }}
 {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
 {{ range $paginator.Pages }}
 <article>
-    <p>
-        <post><a href="{{ .Permalink }}">{{ .Title }}</a></post>
-        <br/>
-        {{ .Date.Format "Jan 2, 2006" }}
+	<p>
+		<post><a href="{{ .Permalink }}">{{ .Title }}</a></post>
+		<br/>
+		<span id="pubdate"> {{ .Date.Format "Jan 2, 2006" }}</span>
         {{ range .Params.tags }}
         <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
         {{ end }}
