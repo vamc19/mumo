@@ -1,5 +1,5 @@
 body {
-	font: 18px/1.4 system-ui, sans-serif;
+	font: 18px/1.4 sans-serif;
 	margin: auto;
 	max-width: 40em;
 	padding: 1em;
@@ -22,7 +22,7 @@ header b a {
 }
 
 footer {
-	font-size: 0.6em;
+	font-size: 0.8em;
 	line-height: 1.4em;
 }
 
