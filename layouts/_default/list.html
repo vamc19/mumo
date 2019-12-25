@@ -1,11 +1,19 @@
 {{ partial "header.html" . }}
-{{ if not .IsHome }}
-	<h3>Posts tagged "{{lower .Title }}"</h3>
+
+{{if not .IsHome }}
+<h1>{{ .Title | markdownify }}</h1>
 {{ end }}
-{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-{{ range $paginator.Pages }}
+
+{{ .Content }}
+
 <article>
-	<p>
+</article>
+
+<article>
+  {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+  {{ range (where $pages "Section" "!=" "") }}
+    <p>
 		<post><a href="{{ .Permalink }}">{{ .Title }}</a></post>
 		<br/>
 		<span id="pubdate"> {{ .Date.Format "Jan 2, 2006" }}</span>
@@ -13,6 +21,6 @@
         <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
         {{ end }}
     </p>
+ {{ end }}
 </article>
-{{ end }}
 {{ partial "footer.html" . }}
