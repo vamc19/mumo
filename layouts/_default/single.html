@@ -1,19 +1,19 @@
 {{ partial "header.html" . }}
 <main>
-	<article>
-		<h1>{{ .Title }}</h1>
-		{{ if ( ne true .Params.staticpage ) }}
-			<span id="pubdate"> {{ .Date.Format "Jan 2, 2006" }}</span>
-			{{ range .Params.tags }}
-			<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-			{{ end }}
-		{{ end }}
+    <article>
+        <h1>{{ .Title }}</h1>
+        {{ if ( ne true .Params.staticpage ) }}
+            <span class="pubdate"> {{ .Date.Format "Jan 2, 2006" }}</span>
+            {{ range .Params.tags }}
+                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        {{ end }}
         {{ .Content }}
-		{{ if ( ne true .Params.staticpage ) }}
-			<div>
-				{{ partial "disqus.html" . }}
-			</div>
-		{{ end }}
+        {{ if and (.Site.DisqusShortname) ( ne true .Params.staticpage ) }}
+            <div>
+                {{ partial "disqus.html" . }}
+            </div>
+        {{ end }}
     </article>
 </main>
 {{ partial "footer.html" . }}
