@@ -4,23 +4,17 @@
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
 
-{{ .Content }}
-
-<article>
-</article>
-
-<article>
-  {{ $pages := .Pages }}
-  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
-  {{ range (where $pages "Section" "!=" "") }}
-    <p>
-		<post><a href="{{ .Permalink }}">{{ .Title }}</a></post>
-		<br/>
-		<span id="pubdate"> {{ .Date.Format "Jan 2, 2006" }}</span>
-        {{ range .Params.tags }}
-        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-    </p>
- {{ end }}
-</article>
+<main>
+    {{ $pages := .Pages }}
+    {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ range (where $pages "Section" "!=" "") }}
+        <article>
+            <div class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+            <span class="pubdate"> {{ .Date.Format "Jan 2, 2006" }}</span>
+            {{ range .Params.tags }}
+                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </article>
+    {{ end }}
+</main>
 {{ partial "footer.html" . }}
